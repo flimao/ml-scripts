@@ -1,2 +1,5 @@
-# ml-scripts
-Useful scripts in Machine Learning and Statistics
+# mltoolkit
+
+A useful toolkit for working with machine learning models
+
+Developed for personal use, but feel free to use it!
