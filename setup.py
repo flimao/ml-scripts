@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name = 'mltoolkit',
-    version = '0.4.0',    
+    version = '0.6.1',    
 
     description = 'A useful toolkit for working with machine learning models',
     url = 'https://github.com/flimao/mltoolkit',
@@ -12,16 +12,13 @@ setup(
     packages = ['mltoolkit'],
     install_requires = [
         'numpy', 'pandas', 'typing', 'sklearn', 'matplotlib', 'seaborn', 
-        'scipy', 'pmdarima', 'unidecode',
-
+        'scipy', 'pmdarima', 'unidecode', 'gensim'
     ],
 
-    classifiers=[
+    classifiers = [
         'Development Status :: 1 - Planning',
         'Intended Audience :: Machine Learning',
         'License :: OSI Approved :: GNU GPLv3',         
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
     ],
 )
