@@ -11,7 +11,7 @@ setup(
     license = 'GNU GPLv3',
     packages = ['mltoolkit'],
     install_requires = [
-        'numpy', 'pandas', 'typing', 'sklearn', 'matplotlib', 'seaborn', 
+        'numpy', 'pandas', 'typing', 'scikit-learn', 'matplotlib', 'seaborn', 
         'scipy', 'six', 'pmdarima', 'unidecode', 'gensim'
     ],
 
