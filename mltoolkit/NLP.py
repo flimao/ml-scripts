@@ -111,6 +111,17 @@ def preprocessing(string, preproc_funs_args):
 def build_word2vec_vectors(model, phrases, vector_combination):
 
     X = []
+    
+    if isinstance(vector_combination, str):
+        if vector_combination == 'sum':
+            vector_combination_fun = lambda x: np.sum(x, axis = 0)
+        elif vector_combination == 'mean':
+            vector_combination_fun = lambda x: np.mean(x, axis = 0)
+        else:
+            raise TypeError(f"vector combination function invalid ('{vector_combination}' provided).")
+    else:
+        vector_combination_fun = vector_combination
+
     vector_size = model.vector_size
 
     for phrase in phrases:
@@ -125,7 +136,7 @@ def build_word2vec_vectors(model, phrases, vector_combination):
             except KeyError:  # token not present in corpus
                 vectors[i, :] = 0
 
-        X.append(vector_combination(vectors))
+        X.append(vector_combination_fun(vectors))
     
     return np.asarray(X)
 
@@ -175,7 +186,7 @@ class W2VTransformer(TransformerMixin, BaseEstimator):
     """
     def __init__(self, vector_size=100, alpha=0.025, window=5, min_count=5, max_vocab_size=None, sample=1e-3, seed=1,
                  workers=3, min_alpha=0.0001, sg=0, hs=0, negative=5, cbow_mean=1, hashfxn=hash, epochs=5, null_word=0,
-                 trim_rule=None, sorted_vocab=1, batch_words=10000, vector_combination = lambda x: np.sum(x, axis = 0)):
+                 trim_rule=None, sorted_vocab=1, batch_words=10000, vector_combination = 'sum'):
         """
         Parameters
         ----------
