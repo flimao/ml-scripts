@@ -3,8 +3,8 @@ __all__ = [
     'plots',
     'ts_metrics',
     'ts_plots',
-    'nlp',
+    'NLP',
 ]
 
 __author__ = 'LmnICE'
-__version__ = '0.7.0'
+__version__ = '0.7.2'

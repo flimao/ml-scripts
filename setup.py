@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name = 'mltoolkit',
-    version = '0.7.0',    
+    version = '0.7.2',    
 
     description = 'A useful toolkit for working with machine learning models',
     url = 'https://github.com/flimao/mltoolkit',
